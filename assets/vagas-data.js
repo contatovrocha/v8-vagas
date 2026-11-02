@@ -25,7 +25,7 @@ const VAGAS = [
   {
     slug: 'sdr',
     titulo: 'SDR · Pré-vendas · Presencial',
-    area: 'COMERCIAL', contrato: 'PJ', modelo: 'Presencial', salario: 'R$ 3.000,00',
+    area: 'COMERCIAL', contrato: 'PJ', modelo: 'Presencial', salario: 'R$ 1.700,00 + variáveis',
     resumo: 'Qualifique leads e agende as reuniões que movem o comercial da V8.',
     missao: 'Ser a porta de entrada do comercial: fazer o primeiro contato com cada lead, qualificar com critério e entregar ao Closer reuniões com empresários que realmente têm fit com a V8.',
     descricao: 'O SDR atende os leads que chegam do tráfego, dos eventos e da Falume CRM, faz a qualificação inicial e agenda as reuniões de diagnóstico. É quem garante velocidade de resposta e agenda cheia para o time de fechamento.',
@@ -35,13 +35,13 @@ const VAGAS = [
     quando: 'Diariamente, com prioridade para o tempo de resposta: lead novo é atendido no mesmo dia.',
     tecnicas: ['Experiência em pré-vendas, SDR ou atendimento comercial.', 'Qualificação de leads (BANT ou similares).', 'Prospecção e cadência por telefone, WhatsApp e e-mail.', 'Uso de CRM e organização de funil.', 'Boa escrita para mensagens comerciais.'],
     comportamentais: ['Energia e disciplina para alto volume de contatos.', 'Comunicação clara e simpática.', 'Escuta ativa.', 'Organização e foco em meta diária.', 'Resiliência diante de recusas.'],
-    remuneracao: 'R$ 3.000,00 + bonificação por reuniões realizadas.',
+    remuneracao: 'R$ 1.700,00 fixo + variáveis por desempenho.',
     skills: ['Experiência como SDR', 'BANT', 'Rapport', 'Prospecção ativa', 'Uso de CRM', 'Proatividade e foco no resultado'],
   },
   {
     slug: 'social-seller',
     titulo: 'Social Seller Pleno · Presencial',
-    area: 'COMERCIAL', contrato: 'PJ', modelo: 'Presencial', salario: 'R$ 3.000,00',
+    area: 'COMERCIAL', contrato: 'PJ', modelo: 'Presencial', salario: 'R$ 2.000,00 + variáveis',
     resumo: 'Gere oportunidades pelas redes sociais e transforme conversas em reuniões.',
     missao: 'Abrir portas pelas redes sociais: iniciar conversas com empresários no Instagram e no LinkedIn, construir relacionamento e transformar interesse em reuniões qualificadas.',
     descricao: 'O Social Seller atua na prospecção pelas redes, interagindo com o público que acompanha a V8 e com empresários do perfil ideal. Trabalha junto com marketing e com o Closer para gerar demanda própria, além do tráfego pago.',
@@ -51,7 +51,7 @@ const VAGAS = [
     quando: 'Diariamente, com metas de conversas iniciadas, reuniões agendadas e acompanhamento das interações.',
     tecnicas: ['Experiência com social selling ou prospecção pelas redes.', 'Domínio de Instagram e LinkedIn para abordagem comercial.', 'Qualificação de leads e agendamento de reuniões.', 'Uso de CRM.', 'Escrita persuasiva e natural.'],
     comportamentais: ['Comunicação leve e estratégica.', 'Criatividade na abordagem.', 'Constância e disciplina.', 'Foco em resultado.', 'Curiosidade sobre o negócio dos clientes.'],
-    remuneracao: 'R$ 3.000,00 + bonificação por reuniões e vendas originadas.',
+    remuneracao: 'R$ 2.000,00 fixo + variáveis por desempenho.',
     skills: ['Social selling', 'Instagram e LinkedIn', 'Prospecção ativa', 'Rapport', 'Uso de CRM', 'Escrita persuasiva'],
   },
   {
@@ -89,7 +89,7 @@ const VAGAS = [
   {
     slug: 'social-media',
     titulo: 'Social Media Pleno',
-    area: 'MARKETING E CONTEÚDO', contrato: 'PJ', modelo: 'Presencial', salario: 'R$ 4.000,00',
+    area: 'MARKETING E CONTEÚDO', contrato: 'PJ', modelo: 'Presencial', salario: 'R$ 2.500,00 + variável',
     resumo: 'Planeje e publique o conteúdo que posiciona a V8 nas redes.',
     missao: 'Construir a presença digital da V8: transformar o conhecimento do time em conteúdo que gera autoridade, audiência e oportunidades para o comercial.',
     descricao: 'O Social Media Pleno planeja o calendário editorial, cria e publica conteúdos para Instagram, LinkedIn e YouTube e acompanha os resultados, junto com o Videomaker e o time comercial.',
@@ -99,7 +99,7 @@ const VAGAS = [
     quando: 'Diariamente, seguindo o calendário editorial semanal e as datas de eventos e lançamentos.',
     tecnicas: ['Experiência como social media.', 'Planejamento de calendário editorial.', 'Escrita de legendas e roteiros.', 'Noções de design (Canva, Figma ou similares).', 'Leitura de métricas das redes.'],
     comportamentais: ['Criatividade e senso estético.', 'Organização e cumprimento de prazos.', 'Curiosidade por tendências.', 'Comunicação clara.', 'Trabalho em equipe.'],
-    remuneracao: 'R$ 4.000,00.',
+    remuneracao: 'R$ 2.500,00 fixo + variável por desempenho.',
     skills: ['Calendário editorial', 'Copy para redes', 'Instagram e LinkedIn', 'Canva / Figma', 'Métricas', 'Roteiros'],
   },
   {

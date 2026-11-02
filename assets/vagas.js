@@ -24,11 +24,12 @@ function listView() {
   $('#back').style.visibility = 'hidden'
   const areas = [...new Set(VAGAS.map((v) => v.area))]
   app.innerHTML = `
-    <section class="hero grid-bg"><div class="wrap">
+    <section class="poster">${HERO_SVG}</section>
+    <section class="hero"><div class="wrap">
       <h1>Acelere sua carreira com a <em>V8</em>.</h1>
       <p class="lead">Somos uma empresa especialista em gerar demanda qualificada para Lançamentos/Mentorias e eventos presenciais para vendas High Ticket que acelera empresários e experts. Se você tem fome de resultado e quer crescer junto, seu lugar é aqui.</p>
     </div></section>
-    <section class="main grid-bg"><div class="wrap one">
+    <section class="main"><div class="wrap one">
       <div class="lhead"><h2>Vagas abertas <span id="cnt">(${VAGAS.length})</span></h2>
         <label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Buscar cargo ou área..."></label></div>
       <div class="filters"><button class="flt on" data-a="">Todas as áreas</button>${areas.map((a) => `<button class="flt" data-a="${esc(a)}">${esc(a)}</button>`).join('')}</div>
@@ -81,12 +82,12 @@ function sobreHtml(v) {
 function vagaView(v) {
   document.title = `${v.titulo} · Vagas V8`
   app.innerHTML = `
-    <section class="hero grid-bg"><div class="wrap">
+    <section class="hero"><div class="wrap">
       <div class="crumb"><a href="/">Vagas</a> / ${esc(v.area)} / ${esc(v.titulo)}</div>
       <div class="chips">${[v.contrato, v.modelo, v.area].map((c) => `<span class="chip">${esc(c)}</span>`).join('')}<span class="chip o">${esc(v.salario)}</span></div>
       <h1>${esc(v.titulo)}</h1>
     </div></section>
-    <section class="main grid-bg"><div class="wrap">
+    <section class="main"><div class="wrap">
       <article class="desc"><div class="eyebrow">Sobre a vaga</div>${sobreHtml(v)}
         <a class="more" href="/">Ver todas as vagas →</a></article>
       <aside class="apply" id="candidatura">

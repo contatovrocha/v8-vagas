@@ -4,7 +4,7 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--tx);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
-.grid-bg{background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px}
+
 header.top{position:sticky;top:0;z-index:20;background:rgba(10,10,12,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 header.top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:64px}
 .back{display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:var(--mu);font-size:15px;font-weight:500}
@@ -113,3 +113,5 @@ footer a{text-decoration:none;color:var(--mu)}
 .toast.on{opacity:1}
 @media(max-width:900px){.main .wrap{grid-template-columns:1fr;gap:40px;padding-top:40px}.apply{position:static}}
 @media(max-width:520px){.brand span{display:none}.share span{display:none}.row,.opts{grid-template-columns:1fr}.row.c{grid-template-columns:1fr 96px}form,.apply-h{padding-left:18px;padding-right:18px}}
+.poster{background:#0d0604;border-bottom:1px solid var(--line);overflow:hidden}
+.poster svg{display:block;width:100%;height:clamp(250px,42vw,600px)}

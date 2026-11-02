@@ -31,6 +31,7 @@ def page(slug, title, desc):
 <body>
 {body}<script>window.VAGA_SLUG = {('"' + slug + '"') if slug else 'null'}</script>
 <script src="/assets/vagas-data.js"></script>
+<script src="/assets/hero.js"></script>
 <script src="/assets/vagas.js"></script>
 </body>
 </html>
