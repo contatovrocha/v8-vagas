@@ -1,9 +1,9 @@
-"""Gera index.html (lista) e uma pasta por vaga (ex.: closer/index.html) a partir de VAGAS em assets/vagas.js.
+"""Gera index.html (lista) e uma pasta por vaga (ex.: closer/index.html) a partir de VAGAS em assets/vagas-data.js.
 Uso: python3 gerar.py  — rode sempre que adicionar, renomear ou remover uma vaga."""
 import html, os, re, shutil
 
-js = open('assets/vagas.js', encoding='utf-8').read()
-vagas = re.findall(r"slug: '([a-z0-9-]+)',\s*area: '[^']*',\s*titulo: '([^']*)',\s*chips: \[[^\]]*\],\s*resumo: '([^']*)'", js)
+js = open('assets/vagas-data.js', encoding='utf-8').read()
+vagas = re.findall(r"slug: '([a-z0-9-]+)',\s*titulo: '([^']*)',[^\n]*\n[^\n]*\n\s*resumo: '([^']*)'", js)
 body = open('_corpo.html', encoding='utf-8').read()
 SITE = 'https://vagas.v8.ia.br'
 
@@ -30,6 +30,7 @@ def page(slug, title, desc):
 </head>
 <body>
 {body}<script>window.VAGA_SLUG = {('"' + slug + '"') if slug else 'null'}</script>
+<script src="/assets/vagas-data.js"></script>
 <script src="/assets/vagas.js"></script>
 </body>
 </html>

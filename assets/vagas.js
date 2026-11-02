@@ -1,50 +1,4 @@
-// ---------------------------------------------------------------- Vagas abertas: para abrir uma nova, adicione um item aqui.
-const VAGAS = [{
-  slug: 'closer',
-  area: 'COMERCIAL',
-  titulo: 'Closer · Presencial no escritório V8',
-  chips: ['Presencial', 'Comercial', 'Fixo + comissão'],
-  resumo: 'Conduza reuniões de fechamento do Diagnóstico 360° e dos programas de aceleração V8.',
-  sobre: `
-    <h3>Sobre a empresa</h3>
-    <p>A V8 Aceleração é uma empresa de engenharia comercial. Ajudamos empresários a destravar o crescimento com o Diagnóstico 360°, uma jornada em 8 etapas que vai de aquisição e posicionamento até processos comerciais e escala. Junto com a Falume CRM, entregamos a estratégia e a ferramenta para executá-la. Estamos presentes no ecossistema G4 Valley e crescendo rápido: este é o momento de entrar no time.</p>
-    <p><b style="color:var(--tx)">Site:</b> <a href="https://aceleracao.v8.ia.br/">aceleracao.v8.ia.br</a></p>
-    <h3>Missão</h3>
-    <p>Transformar oportunidades qualificadas em clientes, conduzindo reuniões de fechamento consultivas, com clareza de diagnóstico, segurança na oferta e respeito ao momento de cada empresário.</p>
-    <h3>Descrição geral</h3>
-    <p>O Closer recebe as oportunidades que chegam pelo tráfego, por eventos e por indicações, conduz a reunião de diagnóstico e fechamento e acompanha a negociação até a assinatura. Atua lado a lado com marketing e com o CS de entrega, garantindo que cada venda comece bem.</p>
-    <h3>Principais responsabilidades</h3>
-    <div class="w">
-      <p><b>O QUÊ:</b> conduz reuniões de diagnóstico e fechamento, apresenta o Diagnóstico 360° e os programas V8, negocia condições, faz follow-up e passa o cliente para a entrega.</p>
-      <p><b>COMO:</b> por reuniões presenciais e online, ligações e WhatsApp, com roteiro comercial, técnicas consultivas e registro de tudo no CRM.</p>
-      <p><b>POR QUÊ:</b> para que cada empresário certo entre na V8 com a expectativa correta, gerando receita previsível, resultado para o cliente e indicações.</p>
-      <p><b>QUANDO:</b> diariamente, conforme a agenda de reuniões, os leads de eventos e as metas mensais do time.</p>
-    </div>
-    <h3>Competências técnicas</h3>
-    <ul>
-      <li>Experiência como Closer, executivo de vendas ou venda consultiva B2B.</li>
-      <li>Condução de reuniões de diagnóstico e fechamento.</li>
-      <li>Qualificação de oportunidades (BANT, SPIN ou similares).</li>
-      <li>Contorno de objeções e negociação de condições.</li>
-      <li>Uso de CRM e disciplina de pipeline e follow-up.</li>
-      <li>Vivência com venda de ticket médio e alto é um diferencial.</li>
-    </ul>
-    <h3>Competências comportamentais</h3>
-    <ul>
-      <li>Fome de resultado e foco em meta.</li>
-      <li>Comunicação clara, segura e consultiva.</li>
-      <li>Escuta ativa para entender o negócio do empresário.</li>
-      <li>Organização e constância na rotina comercial.</li>
-      <li>Resiliência diante de objeções e de um "não".</li>
-      <li>Vontade de aprender e de aplicar feedback rápido.</li>
-    </ul>
-    <h3>Remuneração</h3>
-    <p>Fixo + comissão sobre as vendas realizadas. Valores apresentados na entrevista.</p>
-    <h3>Outras informações</h3>
-    <p><b style="color:var(--tx)">Local:</b> escritório V8 · Brascan<br><b style="color:var(--tx)">Modelo:</b> presencial</p>`,
-  skills: ['Experiência como Closer', 'Venda consultiva B2B', 'BANT / SPIN', 'Contorno de objeções', 'Uso de CRM', 'Venda high ticket'],
-}]
-
+// Página de vagas: listagem, detalhe e candidatura. Os dados das vagas ficam em vagas-data.js.
 const SUPABASE_URL = 'https://hmnhcinkmfwtutkbxejb.supabase.co'
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhtbmhjaW5rbWZ3dHV0a2J4ZWpiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI3ODM3ODcsImV4cCI6MjEwODM1OTc4N30.WRIigm-qiUAjfwYf7GjwTfJzjH_t8dWCWgFftRE07oo'
 const UFS = 'AC AL AP AM BA CE DF ES GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO'.split(' ')
@@ -63,31 +17,65 @@ $('#share').onclick = async () => {
   try { await navigator.clipboard.writeText(location.href); toast('Link copiado') } catch { toast(location.href) }
 }
 
+const BRIEF = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg>'
+
 function listView() {
   document.title = 'Vagas · V8 Aceleração'
   $('#back').style.visibility = 'hidden'
   const areas = [...new Set(VAGAS.map((v) => v.area))]
   app.innerHTML = `
     <section class="hero grid-bg"><div class="wrap">
-      <div class="chips"><span class="chip o">${VAGAS.length} vaga${VAGAS.length > 1 ? 's abertas' : ' aberta'}</span></div>
       <h1>Acelere sua carreira com a <em>V8</em>.</h1>
       <p class="lead">Somos uma empresa de engenharia comercial que acelera empresários dentro e fora do G4 Valley. Se você tem fome de resultado e quer crescer junto, seu lugar é aqui.</p>
     </div></section>
     <section class="main grid-bg"><div class="wrap one">
-      <div class="eyebrow">Vagas abertas</div>
-      ${areas.length > 1 ? `<div class="filters"><button class="flt on" data-a="">Todas</button>${areas.map((a) => `<button class="flt" data-a="${esc(a)}">${esc(a)}</button>`).join('')}</div>` : ''}
+      <div class="lhead"><h2>Vagas abertas <span id="cnt">(${VAGAS.length})</span></h2>
+        <label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Buscar cargo ou área..."></label></div>
+      <div class="filters"><button class="flt on" data-a="">Todas as áreas</button>${areas.map((a) => `<button class="flt" data-a="${esc(a)}">${esc(a)}</button>`).join('')}</div>
       <div class="list" id="list">${VAGAS.map((v) => `
-        <a class="vcard" href="/${v.slug}/" data-a="${esc(v.area)}">
-          <div><small class="area">${esc(v.area)}</small><h3>${esc(v.titulo)}</h3><p>${esc(v.resumo)}</p>
-          <div class="chips">${v.chips.map((c) => `<span class="chip">${esc(c)}</span>`).join('')}</div></div>
-          <span class="see">Ver vaga <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></a>`).join('')}
+        <a class="vrow" href="/${v.slug}/" data-a="${esc(v.area)}" data-q="${esc((v.titulo + ' ' + v.area).toLowerCase())}">
+          <span class="ico">${BRIEF}</span>
+          <div class="vb"><div class="vt"><h3>${esc(v.titulo)}</h3><span class="tag">${esc(v.contrato)}</span><span class="tag">${esc(v.modelo)}</span></div>
+            <div class="vm">${esc(v.area)} <i>·</i> <b>${esc(v.salario)}</b></div>
+            <p>${esc(v.resumo)}</p></div>
+          <svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>`).join('')}
+        <p class="empty" id="empty">Nenhuma vaga encontrada.</p>
       </div>
-      <div class="talent"><div><h3>Não encontrou sua vaga?</h3><p>Fique de olho: novas vagas abrem conforme o time cresce. Acompanhe a V8 em <a href="https://aceleracao.v8.ia.br/">aceleracao.v8.ia.br</a>.</p></div></div>
+      <div class="talent"><h3>Não encontrou sua vaga?</h3><p>Novas vagas abrem conforme o time cresce. Acompanhe a V8 em <a href="https://aceleracao.v8.ia.br/">aceleracao.v8.ia.br</a>.</p></div>
     </div></section>`
+  let area = ''
+  const apply = () => {
+    const q = $('#q').value.trim().toLowerCase()
+    let n = 0
+    document.querySelectorAll('#list .vrow').forEach((c) => {
+      const ok = (!area || c.dataset.a === area) && (!q || c.dataset.q.includes(q))
+      c.style.display = ok ? '' : 'none'
+      n += ok
+    })
+    $('#cnt').textContent = `(${n})`
+    $('#empty').style.display = n ? 'none' : 'block'
+  }
+  $('#q').addEventListener('input', apply)
   document.querySelectorAll('.flt').forEach((b) => b.onclick = () => {
+    area = b.dataset.a
     document.querySelectorAll('.flt').forEach((x) => x.classList.toggle('on', x === b))
-    document.querySelectorAll('#list .vcard').forEach((c) => { c.style.display = !b.dataset.a || c.dataset.a === b.dataset.a ? '' : 'none' })
+    apply()
   })
+}
+
+function sobreHtml(v) {
+  const ul = (xs) => `<ul>${xs.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>`
+  return `
+    <h3>Sobre a empresa</h3><p>${esc(EMPRESA)}</p>
+    <p><b style="color:var(--tx)">Site:</b> <a href="https://aceleracao.v8.ia.br/">aceleracao.v8.ia.br</a></p>
+    <h3>Missão</h3><p>${esc(v.missao)}</p>
+    <h3>Descrição geral</h3><p>${esc(v.descricao)}</p>
+    <h3>Principais responsabilidades</h3>
+    <div class="w"><p><b>O QUÊ:</b> ${esc(v.oque)}</p><p><b>COMO:</b> ${esc(v.como)}</p><p><b>POR QUÊ:</b> ${esc(v.porque)}</p><p><b>QUANDO:</b> ${esc(v.quando)}</p></div>
+    <h3>Competências técnicas</h3>${ul(v.tecnicas)}
+    <h3>Competências comportamentais</h3>${ul(v.comportamentais)}
+    <h3>Remuneração</h3><p>${esc(v.remuneracao)}</p>
+    <h3>Outras informações</h3><p><b style="color:var(--tx)">Local:</b> ${esc(LOCAL)}<br><b style="color:var(--tx)">Modelo:</b> ${esc(v.modelo)}<br><b style="color:var(--tx)">Contrato:</b> ${esc(v.contrato)}</p>`
 }
 
 function vagaView(v) {
@@ -95,14 +83,14 @@ function vagaView(v) {
   app.innerHTML = `
     <section class="hero grid-bg"><div class="wrap">
       <div class="crumb"><a href="/">Vagas</a> / ${esc(v.area)} / ${esc(v.titulo)}</div>
-      <div class="chips">${v.chips.map((c, i) => `<span class="chip${i === v.chips.length - 1 ? ' o' : ''}">${esc(c)}</span>`).join('')}</div>
+      <div class="chips">${[v.contrato, v.modelo, v.area].map((c) => `<span class="chip">${esc(c)}</span>`).join('')}<span class="chip o">${esc(v.salario)}</span></div>
       <h1>${esc(v.titulo)}</h1>
     </div></section>
     <section class="main grid-bg"><div class="wrap">
-      <article class="desc"><div class="eyebrow">Sobre a vaga</div>${v.sobre}
+      <article class="desc"><div class="eyebrow">Sobre a vaga</div>${sobreHtml(v)}
         <a class="more" href="/">Ver todas as vagas →</a></article>
       <aside class="apply" id="candidatura">
-        <div class="apply-h"><small>CANDIDATURA</small><h2>${esc(v.titulo)}</h2><p>${esc(v.chips[0])} · ${esc(v.area)}</p></div>
+        <div class="apply-h"><small>CANDIDATURA</small><h2>${esc(v.titulo)}</h2><p>${esc(v.contrato)} · ${esc(v.area)}</p></div>
         <form id="form" novalidate>
           <div class="sec">Dados pessoais</div>
           <label class="f">Nome completo <i>*</i><input type="text" name="nome" autocomplete="name" placeholder="Seu nome completo" maxlength="120"></label>
@@ -118,7 +106,7 @@ function vagaView(v) {
           </div>
           <label class="f">LinkedIn<input type="url" name="linkedin" placeholder="linkedin.com/in/seu-perfil" maxlength="200"></label>
           <div class="sec">Experiência</div>
-          <label class="f">Quantos anos de experiência você tem em vendas? <i>*</i>
+          <label class="f">Quantos anos de experiência você tem na área? <i>*</i>
             <div class="opts">${EXP.map(([k, l]) => `<label class="opt"><input type="radio" name="experiencia" value="${k}">${l}</label>`).join('')}</div></label>
           <label class="f">Currículo <i>*</i>
             <label class="drop" id="drop"><input type="file" name="curriculo" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">

@@ -74,21 +74,32 @@ button.go:disabled{opacity:.6;cursor:wait}
 .done h3{font:700 22px Outfit;margin-bottom:6px}
 .done p{color:var(--mu);font-size:14.5px}
 .lead{max-width:640px;color:#c4c4cc;font-size:17px;margin-top:16px}
-.main .wrap.one{display:block}.wrap.one>.list,.wrap.one>.talent,.wrap.one>.filters{max-width:900px}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
-.flt{background:var(--card);border:1px solid var(--line);color:#d4d4d8;border-radius:999px;padding:7px 15px;font:600 13px Inter;cursor:pointer}
-.flt.on{border-color:var(--or);color:var(--or2);background:rgba(255,106,0,.1)}
-.list{display:grid;gap:14px}
-.vcard{display:flex;justify-content:space-between;align-items:center;gap:24px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 26px;text-decoration:none;transition:border-color .15s,transform .15s}
-.vcard:hover{border-color:var(--or);transform:translateY(-2px)}
-.vcard .area{font-size:11.5px;font-weight:700;letter-spacing:2.2px;color:var(--or2)}
-.vcard h3{font:700 22px/1.25 Outfit;margin:4px 0 6px}
-.vcard p{color:var(--mu);font-size:14.5px;margin-bottom:12px}
-.vcard .chips{margin:0}
-.see{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;color:var(--or2);white-space:nowrap}
+.main .wrap.one{display:block}
+.wrap.one>*{max-width:960px}
+.lhead{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.lhead h2{font:700 22px Outfit}.lhead h2 span{color:var(--mu);font:500 15px Inter}
+.search{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 12px;color:var(--mu);width:280px;max-width:100%}
+.search:focus-within{border-color:var(--or)}
+.search input{background:none;border:0;outline:none;color:var(--tx);font:14px Inter;padding:11px 0;width:100%}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.flt{background:var(--card);border:1px solid var(--line);color:#d4d4d8;border-radius:999px;padding:8px 15px;font:600 12.5px Inter;letter-spacing:.3px;cursor:pointer}
+.flt:hover{border-color:#44444d}
+.flt.on{border-color:var(--or);color:#140800;background:var(--or)}
+.list{display:grid;gap:10px}
+.vrow{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px;text-decoration:none;transition:border-color .15s,transform .15s}
+.vrow:hover{border-color:var(--or);transform:translateY(-1px)}
+.vrow:hover .arr{color:var(--or);transform:translateX(3px)}
+.ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(255,106,0,.1);border:1px solid rgba(255,106,0,.3);color:var(--or2)}
+.vt{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.vt h3{font:700 17px/1.3 Outfit;margin-right:4px}
+.tag{font-size:11px;font-weight:600;border:1px solid var(--line);background:var(--bg2);border-radius:6px;padding:2px 7px;color:#d4d4d8}
+.vm{font-size:12.5px;color:var(--mu);margin-top:4px;letter-spacing:.3px}.vm i{font-style:normal;margin:0 4px}.vm b{color:var(--or2);font-weight:600}
+.vb p{font-size:13.5px;color:#8b8b95;margin-top:4px}
+.arr{color:var(--mu);transition:transform .15s,color .15s}
+.empty{display:none;text-align:center;color:var(--mu);padding:30px 0}
 .talent{margin-top:28px;border:1px dashed #3a3a44;border-radius:18px;padding:22px 26px}
 .talent h3{font:700 18px Outfit;margin-bottom:4px}.talent p{color:var(--mu);font-size:14.5px}.talent a{color:var(--or2)}
-@media(max-width:640px){.vcard{flex-direction:column;align-items:flex-start;gap:14px}}
+@media(max-width:640px){.vrow{grid-template-columns:1fr auto;padding:16px}.ico{display:none}.search{width:100%}}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;place-items:center;padding:20px;z-index:50}
 .modal.on{display:grid}
 .modal div{max-width:560px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;font-size:14px;color:#c4c4cc;max-height:85vh;overflow:auto}
