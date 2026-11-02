@@ -24,7 +24,7 @@ function listView() {
   $('#back').style.visibility = 'hidden'
   const areas = [...new Set(VAGAS.map((v) => v.area))]
   app.innerHTML = `
-    <section class="poster">${HERO_SVG}</section>
+    <section class="poster"><img src="/assets/time-v8.webp" alt="Time V8: equipe de terno laranja no alto de uma rocha, segurando a bandeira Bora Vender" width="1672" height="941" fetchpriority="high"></section>
     <section class="hero"><div class="wrap">
       <h1>Acelere sua carreira com a <em>V8</em>.</h1>
       <p class="lead">Somos uma empresa especialista em gerar demanda qualificada para Lançamentos/Mentorias e eventos presenciais para vendas High Ticket que acelera empresários e experts. Se você tem fome de resultado e quer crescer junto, seu lugar é aqui.</p>

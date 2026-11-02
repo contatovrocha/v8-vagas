@@ -20,7 +20,8 @@ def page(slug, title, desc):
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="{SITE}/assets/v8-logo.png">
+<meta property="og:image" content="{SITE}/assets/time-v8-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="{url}">
 <meta name="theme-color" content="#0a0a0c">
 <link rel="icon" href="/assets/v8-logo.png">
@@ -31,7 +32,6 @@ def page(slug, title, desc):
 <body>
 {body}<script>window.VAGA_SLUG = {('"' + slug + '"') if slug else 'null'}</script>
 <script src="/assets/vagas-data.js"></script>
-<script src="/assets/hero.js"></script>
 <script src="/assets/vagas.js"></script>
 </body>
 </html>

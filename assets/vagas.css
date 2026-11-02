@@ -114,4 +114,5 @@ footer a{text-decoration:none;color:var(--mu)}
 @media(max-width:900px){.main .wrap{grid-template-columns:1fr;gap:40px;padding-top:40px}.apply{position:static}}
 @media(max-width:520px){.brand span{display:none}.share span{display:none}.row,.opts{grid-template-columns:1fr}.row.c{grid-template-columns:1fr 96px}form,.apply-h{padding-left:18px;padding-right:18px}}
 .poster{background:#0d0604;border-bottom:1px solid var(--line);overflow:hidden}
-.poster svg{display:block;width:100%;height:clamp(250px,42vw,600px)}
+.poster{background:#0a0604}
+.poster img{display:block;width:100%;max-width:1672px;margin:0 auto;height:auto;aspect-ratio:1672/941;object-fit:cover}
