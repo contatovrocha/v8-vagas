@@ -26,7 +26,7 @@ function listView() {
   app.innerHTML = `
     <section class="hero grid-bg"><div class="wrap">
       <h1>Acelere sua carreira com a <em>V8</em>.</h1>
-      <p class="lead">Somos uma empresa de engenharia comercial que acelera empresários dentro e fora do G4 Valley. Se você tem fome de resultado e quer crescer junto, seu lugar é aqui.</p>
+      <p class="lead">Somos uma empresa especialista em gerar demanda qualificada para Lançamentos/Mentorias e eventos presenciais para vendas High Ticket que acelera empresários e experts. Se você tem fome de resultado e quer crescer junto, seu lugar é aqui.</p>
     </div></section>
     <section class="main grid-bg"><div class="wrap one">
       <div class="lhead"><h2>Vagas abertas <span id="cnt">(${VAGAS.length})</span></h2>
