@@ -24,14 +24,14 @@ function listView() {
   $('#back').style.visibility = 'hidden'
   const areas = [...new Set(VAGAS.map((v) => v.area))]
   app.innerHTML = `
-    <section class="hero intro"><div class="wrap split">
-      <div class="poster"><img src="/assets/time-v8.webp" alt="Time V8: equipe de terno laranja no alto de uma rocha, segurando a bandeira Bora Vender" width="1672" height="941" fetchpriority="high"></div>
+    <section class="banner"><img src="/assets/time-v8.webp" alt="Time V8: equipe de terno laranja no alto de uma rocha, segurando a bandeira Bora Vender" width="1672" height="941" fetchpriority="high"></section>
+    <section class="hero intro"><div class="wrap">
       <div class="intro-tx">
         <span class="chip o">${VAGAS.length} vagas abertas</span>
         <h1>Acelere sua carreira com a <em>V8</em>.</h1>
         <p class="lead">Somos uma empresa especialista em gerar demanda qualificada para Lançamentos/Mentorias e eventos presenciais para vendas High Ticket que acelera empresários e experts. Se você tem fome de resultado e quer crescer junto, seu lugar é aqui.</p>
-        <a class="cta-list" href="#vagas">Ver vagas abertas <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
       </div>
+      <a class="cta-list" href="#vagas">Ver vagas abertas <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
     </div></section>
     <section class="main" id="vagas"><div class="wrap one">
       <div class="lhead"><h2>Vagas abertas <span id="cnt">(${VAGAS.length})</span></h2>
