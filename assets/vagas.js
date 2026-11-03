@@ -24,7 +24,7 @@ function listView() {
   $('#back').style.visibility = 'hidden'
   const areas = [...new Set(VAGAS.map((v) => v.area))]
   app.innerHTML = `
-    <section class="banner"><img src="/assets/time-v8.webp" alt="Time V8: equipe de terno laranja no alto de uma rocha, segurando a bandeira Bora Vender" width="1672" height="941" fetchpriority="high"></section>
+    <section class="banner"><picture><source media="(min-width: 901px)" srcset="/assets/time-v8-banner.webp" width="2000" height="667"><img src="/assets/time-v8.webp" alt="Time V8 Lançamentos: equipe de terno laranja no alto de um prédio, segurando a bandeira Bora Vender" width="1672" height="941" fetchpriority="high"></picture></section>
     <section class="hero intro"><div class="wrap">
       <div class="intro-tx">
         <span class="chip o">${VAGAS.length} vagas abertas</span>

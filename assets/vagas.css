@@ -114,7 +114,7 @@ footer a{text-decoration:none;color:var(--mu)}
 @media(max-width:900px){.main .wrap{grid-template-columns:1fr;gap:40px;padding-top:40px}.apply{position:static}}
 @media(max-width:520px){.brand span{display:none}.share span{display:none}.row,.opts{grid-template-columns:1fr}.row.c{grid-template-columns:1fr 96px}form,.apply-h{padding-left:18px;padding-right:18px}}
 .banner{background:#0a0604;border-bottom:1px solid var(--line)}
-.banner img{display:block;width:100%;height:auto;aspect-ratio:16/5;object-fit:cover;object-position:50% 6%}
+.banner img{display:block;width:100%;height:auto;aspect-ratio:2000/667;object-fit:cover}
 .intro .wrap{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;padding-top:40px;padding-bottom:40px}
 .intro .lead{max-width:720px}
 .intro-tx .chip{display:inline-block;margin-bottom:16px}
